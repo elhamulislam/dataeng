@@ -13,8 +13,8 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "auto-expire" {
-  name          = "fleet-muse-464901-m2-terra-demo"
-  location      = "US"
+  name          = var.gcs_bucket_n
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
